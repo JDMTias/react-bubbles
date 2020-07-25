@@ -29,7 +29,18 @@ const ColorList = ({ colors, updateColors }) => {
     .put(`http://localhost:5000/api/colors/${colorToEdit.id}`, colorToEdit )
     .then((res) => {  
       console.log(res.data)
+      console.log(colors)
       // map here
+       updateColors(colors.map((color) => {
+         
+        if (res.data.id === color.id) {
+          return res.data
+        }else{
+          return color
+        }
+        
+       }))
+       console.log(colors)
        setEditing(false)
 
     })
