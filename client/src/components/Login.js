@@ -19,8 +19,8 @@ const Login = () => {
     e.preventDefault();
     axios.post('http://localhost:5000/api/login', userCred)
     .then(res => {
-      console.log(res)
-      console.log(res.data.payload)
+      // console.log(res)
+      // console.log(res.data.payload)
       localStorage.setItem('token', res.data.payload)
       window.location.assign("/colors")
     })

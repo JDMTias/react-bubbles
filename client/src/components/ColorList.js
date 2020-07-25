@@ -28,7 +28,9 @@ const ColorList = ({ colors, updateColors }) => {
     axiosWithAuth()
     .put(`http://localhost:5000/api/colors/${colorToEdit.id}`, colorToEdit )
     .then((res) => {  
-      setEditing(false)
+      console.log(res.data)
+      // map here
+       setEditing(false)
 
     })
     .catch((err) => console.log(err))
