@@ -28,8 +28,8 @@ const ColorList = ({ colors, updateColors }) => {
     axiosWithAuth()
     .put(`http://localhost:5000/api/colors/${colorToEdit.id}`, colorToEdit )
     .then((res) => {  
-      console.log(res)
-      console.log(res.data)
+      setEditing(false)
+
     })
     .catch((err) => console.log(err))
 
